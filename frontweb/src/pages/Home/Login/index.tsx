@@ -24,17 +24,8 @@ const Login = () => {
             name="password"
           />
         </div>
-        <Link to="/admin/auth/recover" className="login-link-recover">
-          Esqueci a senha
-        </Link>
         <div className="login-submit">
           <ButtonIcon text="Fazer login" />
-        </div>
-        <div className="signup-container">
-          <span className="not-registered">Não tem Cadastro?</span>
-          <Link to="/admin/auth/register" className="login-link-register">
-            CADASTRAR
-          </Link>
         </div>
       </form>
     </div>
