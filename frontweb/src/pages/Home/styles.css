@@ -1,7 +1,7 @@
 .home-container {
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 12px;
 }
 
 .home-banner-container {
