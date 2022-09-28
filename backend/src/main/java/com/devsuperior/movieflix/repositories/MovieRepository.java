@@ -13,6 +13,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
 	@Query("SELECT obj "
 			+ "FROM Movie obj WHERE "
 			+ "(COALESCE(:genre) IS NULL OR :genre = obj.genre) "
-			+ "ORDER BY obj.title")
+			+ "ORDER BY obj.id")
 	Page<Movie> find(Genre genre, Pageable pageable);
 }
