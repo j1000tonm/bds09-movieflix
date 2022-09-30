@@ -1,8 +1,11 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'util/requests';
+
+import './styles.css';
 
 const MovieCatalog = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
@@ -23,9 +26,12 @@ const MovieCatalog = () => {
   }, []);
 
   return (
-    <div>
+    <div className="catalog-container">
+      <h1>Tela listagem de filmes</h1>
       {page?.content.map((item) => (
-        <p key={item.id}>Acessar /movies/{item.id}</p>
+        <Link to="/movies/1">
+           <p key={item.id}>Acessar /movies/{item.id}</p>
+        </Link>
       ))}
     </div>
   );

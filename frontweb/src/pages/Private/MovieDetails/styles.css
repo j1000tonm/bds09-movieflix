@@ -1,0 +1,31 @@
+.details-contanier {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.details-content-contanier {
+    width: 265px;
+    margin-bottom: 18px;
+    border: 1px solid yellow;
+}
+
+.details-content-contanier h1 {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+.review-content-contanier {
+  padding: 20px 10px;
+  width: 100%;
+  margin-bottom: 18px;
+  border: 1px solid blue;
+}
+
+.listing-content-contanier {
+  padding: 15px 10px;
+  border: 1px solid brown;
+}
