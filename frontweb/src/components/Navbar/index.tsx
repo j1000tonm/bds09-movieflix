@@ -36,23 +36,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-md bg-warning main-nav">
+    <nav className="navbar bg-warning main-nav">
       <div className="container-fluid">
-        <Link to="/" className="nav-logo-text">
-          <h4>MovieFlix</h4>
-        </Link>
-      </div>
-      <div>
-        {AuthData.authenticated ? (
-          <>
-            <span>{AuthData.tokenData?.user_name}</span>
+        <div>
+          <Link to="/" className="nav-logo-text">
+            <h1>MovieFlix</h1>
+          </Link>
+        </div>
+        <div className="nav-logout">
+          {AuthData.authenticated ? (
             <a href="#logout" onClick={handleLogoutClick}>
               SAIR
             </a>
-          </>
-        ) : (
-          <></>
-        )}
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </nav>
   );

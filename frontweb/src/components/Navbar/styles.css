@@ -1,8 +1,39 @@
 .main-nav {
-    padding-left: 50px;
-    height: 68px;
+  padding-left: 10px;
+  height: 68px;
 }
 
-.nav-logo-text, .nav-logo-text:hover {
-    color: #000;
+.nav-logo-text,
+.nav-logo-text:hover {
+  font-size: 24px;
+  color: #000;
+}
+
+.nav-logout {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    padding-left: 30px;
+  }
+
+  .nav-logout {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-nav {
+    padding-left: 50px;
+  }
+
+  .nav-logout {
+    margin-right: 30px;
+  }
 }
