@@ -1,35 +1,33 @@
-import { useEffect, useState } from 'react';
+import { AuthContext } from 'AuthContext';
+import ButtonLogout from 'components/ButtonLogout';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getTokenData, isAuthenticated, TokenData } from 'util/auth';
+import { getTokenData, isAuthenticated } from 'util/auth';
 import history from 'util/history';
 import { removeAuthData } from 'util/requests';
 import './styles.css';
 
-type AuthData = {
-  authenticated: boolean;
-  tokenData?: TokenData;
-};
-
 const Navbar = () => {
-  const [AuthData, setAuthData] = useState<AuthData>({ authenticated: false });
+
+  const { authContextData, setAuthContextData } = useContext(AuthContext);
 
   useEffect(() => {
     if (isAuthenticated()) {
-      setAuthData({
+      setAuthContextData({
         authenticated: true,
         tokenData: getTokenData(),
       });
     } else {
-      setAuthData({
+      setAuthContextData({
         authenticated: false,
       });
     }
-  }, []);
+  }, [setAuthContextData]);
 
   const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     removeAuthData();
-    setAuthData({
+    setAuthContextData({
       authenticated: false,
     });
     history.replace('/');
@@ -43,14 +41,12 @@ const Navbar = () => {
             <h1>MovieFlix</h1>
           </Link>
         </div>
-        <div className="nav-logout">
-          {AuthData.authenticated ? (
+        <div>
+          {authContextData.authenticated ? (
             <a href="#logout" onClick={handleLogoutClick}>
-              SAIR
+              <ButtonLogout />
             </a>
-          ) : (
-            <></>
-          )}
+          ) : ([])}
         </div>
       </div>
     </nav>

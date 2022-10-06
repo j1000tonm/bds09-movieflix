@@ -7,7 +7,7 @@ export type AuthContextData = {
 };
 
 export type AuthContextType = {
-  authContextData: AuthContextData;
+  authContextData: AuthContextData,
   setAuthContextData: (authContextData: AuthContextData) => void;
 };
 
