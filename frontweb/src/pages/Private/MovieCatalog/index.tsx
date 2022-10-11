@@ -28,11 +28,14 @@ const MovieCatalog = () => {
   return (
     <div className="catalog-container">
       <h1>Tela listagem de filmes</h1>
-      {page?.content.map((item) => (
+      <div>
         <Link to="/movies/1">
-           <p key={item.id}>Acessar /movies/{item.id}</p>
+           <p>Acessar /movies/1</p>
         </Link>
-      ))}
+        <Link to="/movies/2">
+           <p>Acessar /movies/2</p>
+        </Link>
+      </div>
     </div>
   );
 };

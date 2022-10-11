@@ -1,17 +1,26 @@
 import { ReactComponent as StarIcon } from 'assets/images/star.svg';
+import { Review } from 'types/review';
 
 import './styles.css';
 
-const ReviewListing = () => {
+type Props = {
+  reviews: Review[];
+};
+
+const ReviewListing = ({ reviews }: Props) => {
   return (
     <>
-      <div className="user-card">
-        <StarIcon />
-        <h6>Maria Silva</h6>
-      </div>
-      <div className="review-card">
-        <p>Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.</p>
-      </div>
+      {reviews.map((item) => (
+        <>
+        <div className="user-card">
+          <StarIcon />
+          <h6 key={item.id}>{item.user.name}</h6>
+        </div>
+        <div className="review-card">
+          <p key={item.id}>{item.text}</p>
+        </div>
+        </>
+      ))}
     </>
   );
 };

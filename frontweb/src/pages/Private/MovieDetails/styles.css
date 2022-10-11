@@ -2,18 +2,16 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid red;
+  font-size: 24px;
 }
 
 .details-content-contanier {
-    width: 265px;
-    margin-bottom: 18px;
-    border: 1px solid yellow;
+  width: 265px;
+  margin-bottom: 18px;
 }
 
 .details-content-contanier h1 {
   font-weight: 700;
-  font-size: 24px;
   letter-spacing: -0.015em;
   color: #ffffff;
 }
@@ -22,10 +20,31 @@
   padding: 20px 10px;
   width: 100%;
   margin-bottom: 18px;
-  border: 1px solid blue;
 }
 
 .listing-content-contanier {
   padding: 15px 10px;
-  border: 1px solid brown;
+}
+
+@media (min-width: 576px) {
+  .details-contanier {
+    padding: 20px;
+  }
+
+  .details-content-contanier {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .details-contanier {
+    padding: 40px;
+  }
+
+  .details-content-contanier {
+    margin-bottom: 25px;
+  }
+ .details-content-contanier h1 {
+  font-size: 2.0em;
+ }
 }

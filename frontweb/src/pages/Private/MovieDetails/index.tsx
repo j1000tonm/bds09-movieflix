@@ -28,22 +28,25 @@ const MovieDetails = () => {
     });
   }, [movieId]);
 
+  const handleInsertReview = (review: Review) => {
+    const clone = [...reviews];
+    clone.push(review);
+    setReviews(clone);
+  };
+
   return (
     <div className="details-contanier">
       <div className="details-content-contanier">
-        <h1>Tela detalhes do filme id: 1</h1>
+        <h1>Tela detalhes do filme id: {movieId}</h1>
       </div>
 
-      <div className="base-card review-content-contanier">
-          {hasAnyRoles(['ROLE_MEMBER']) && (
-            <ReviewForm movieId={movieId} />
-          )}
-      </div>
+      {hasAnyRoles(['ROLE_MEMBER']) && (
+        <div className="base-card review-content-contanier">
+          <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
+        </div>
+      )}
 
-      <div className="base-card listing-content-contanier">
-        <ReviewListing />
-        <ReviewListing />
-      </div>
+      <ReviewListing reviews={reviews} />
     </div>
   );
 };
